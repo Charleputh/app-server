@@ -9,7 +9,8 @@ export default (appInfo: MidwayAppInfo) => {
     },
     cors: {
       origin: "cat.computecoin.me",
-      credentials: true
+      credentials: true,
+      allowHeaders: "*"
     }
     // security: {
     //   csrf: false,
