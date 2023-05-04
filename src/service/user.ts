@@ -27,14 +27,12 @@ export class UserService {
     };
   }
 
-  async getCode() {
-    // const url = ""
-  }
+  async getCode() {}
 
   async getMettings(authCode) {
     const token = await this.getUsertoken(authCode);
     console.log(token);
-    const mettings = await axios.get("https://zoom.us/v2/users/me", {
+    const mettings = await axios.get("https://zoom.us/v2/users/me/meetings?type=live", {
       headers: {
         Authorization: "Bearer " + token
       }
