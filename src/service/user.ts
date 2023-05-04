@@ -1,5 +1,4 @@
 import axios from "axios";
-import { stringify } from "querystring";
 import { Provide } from "@midwayjs/core";
 import { IUserOptions } from "../interface";
 
