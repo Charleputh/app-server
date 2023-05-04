@@ -29,9 +29,9 @@ export class UserService {
   async getMettings(authCode) {
     const token = await this.getUsertoken(authCode);
     console.log(token);
-    const mettings = await axios.get("https://zoom.us/v2/users//meetings", {
+    const mettings = await axios.get("https://zoom.us/v2/users/me/meetings", {
       headers: {
-        Authorization: "Bearer " + token,
+        Authorization: "Bearer " + token
       }
     });
     console.log(mettings);
@@ -39,13 +39,12 @@ export class UserService {
 
   async getUsertoken(authCode) {
     const res = await axios.post(
-      "https://zoom.us/oauth/token" +
-        "?" +
-        stringify({
-          code: authCode,
-          grant_type: "authorization_code",
-          redirect_uri: "https://cat.computecoin.me/#/redirect"
-        }),
+      "https://zoom.us/oauth/token",
+      {
+        response_type: authCode,
+        grant_type: "authorization_code",
+        redirect_uri: "https://cat.computecoin.me/#/redirect"
+      },
       {
         headers: zoomApiHeaders
       }
