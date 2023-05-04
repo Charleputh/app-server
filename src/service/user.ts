@@ -28,7 +28,7 @@ export class UserService {
   }
 
   async getCode() {
-    const url = ""
+    // const url = ""
   }
 
   async getMettings(authCode) {
