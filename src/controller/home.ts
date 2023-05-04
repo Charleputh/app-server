@@ -15,6 +15,5 @@ export class HomeController {
   async users(req) {
     const code = req.request.header.code;
     await this.userService.getMettings(code);
-    return { success: true, msg: "success" };
   }
 }

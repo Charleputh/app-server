@@ -38,6 +38,15 @@ export class UserService {
       }
     });
     console.log(mettings);
+    const live = mettings.data && mettings.data[0];
+    // const mettingId = live.id;
+    return {
+      status: 200,
+      data: {
+        metting: live,
+        token
+      }
+    }
   }
 
   async getUsertoken(authCode) {
