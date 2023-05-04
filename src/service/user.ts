@@ -40,7 +40,7 @@ export class UserService {
     const res = await axios.post(
       "https://zoom.us/oauth/token",
       {
-        response_type: authCode,
+        code: authCode,
         grant_type: "authorization_code",
         redirect_uri: "https://cat.computecoin.me/#/redirect"
       },
