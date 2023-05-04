@@ -4,8 +4,8 @@ import { Provide } from "@midwayjs/core";
 import { IUserOptions } from "../interface";
 
 // 客户端ID和客户端密钥
-const clientId = "IKeOLt9rTziAhNXv_TCrJg";
-const clientSecret = "S6OydVt0sqDJTuSuK9aYyNu76k7OriW4";
+const clientId = "62OK_WCRQlGrIzak3Tenkw";
+const clientSecret = "ChlCG6qq4tZHejf5jneQxVqMi4IoFWUz";
 
 // Zoom API的请求头，包含客户端ID和客户端密钥
 const zoomApiHeaders = {
