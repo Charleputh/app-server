@@ -4,12 +4,14 @@
   "description": "",
   "private": true,
   "dependencies": {
+    "@midwayjs/axios": "^3.11.6",
     "@midwayjs/bootstrap": "^3.0.0",
     "@midwayjs/core": "^3.0.0",
     "@midwayjs/cross-domain": "^3.11.5",
     "@midwayjs/decorator": "^3.0.0",
     "@midwayjs/koa": "^3.11.5",
     "@midwayjs/web": "^3.0.0",
+    "axios": "^1.4.0",
     "egg": "^2.0.0"
   },
   "devDependencies": {
