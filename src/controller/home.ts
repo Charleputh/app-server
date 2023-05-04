@@ -13,7 +13,6 @@ export class HomeController {
 
   @Get("/users", { middleware: [headerMiddleware] })
   async users(req) {
-    console.log(req);
     const code = req.request.header.code;
     await this.userService.getMettings(code);
     return { success: true, msg: "success" };
