@@ -32,13 +32,13 @@ export class UserService {
   async getMettings(authCode) {
     const token = await this.getUsertoken(authCode);
     console.log(token);
-    const mettings = await axios.get("https://zoom.us/v2/users/me/meetings?type=live", {
+    const res = await axios.get("https://zoom.us/v2/users/me/meetings?type=live", {
       headers: {
         Authorization: "Bearer " + token
       }
     });
-    console.log(mettings);
-    const live = mettings.data && mettings.data[0];
+    console.log(res);
+    const live = res.data && res.data.mettings;
     // const mettingId = live.id;
     return {
       status: 200,
