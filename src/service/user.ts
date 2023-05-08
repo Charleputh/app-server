@@ -37,13 +37,12 @@ export class UserService {
         Authorization: "Bearer " + token
       }
     });
-    console.log(res);
-    const live = res.data && res.data.mettings;
+    // const live = res.data && res.data.mettings;
     // const mettingId = live.id;
     return {
       status: 200,
       data: {
-        metting: live,
+        metting: res.data,
         token
       }
     }
