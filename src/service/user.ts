@@ -42,7 +42,7 @@ export class UserService {
     return {
       status: 200,
       data: {
-        metting: res.data,
+        meeting: res.data,
         token
       }
     }
