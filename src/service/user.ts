@@ -3,6 +3,8 @@ import { Provide } from "@midwayjs/core";
 import { IUserOptions } from "../interface";
 import * as crypto from "crypto";
 
+const KJUR = require('jsrsasign')
+
 // 客户端ID和客户端密钥
 const clientId = "2DITwmiQSXKbCr_hnuIYfg";
 const clientSecret = "V99WwTv7JFqfGCmPWgnyeE6qA1I690Wp";
@@ -37,19 +39,24 @@ export class UserService {
   async getCode() {}
 
   generateSignature(meetingNumber, role) {
-    const timestamp = new Date().getTime() - 30000;
-    const msg = Buffer.from(
-      API_KEY + meetingNumber + timestamp + role
-    ).toString("base64");
-    const hash = crypto
-      .createHmac("sha256", API_SECRET)
-      .update(msg)
-      .digest("base64");
-    const signature = Buffer.from(
-      `${API_KEY}.${meetingNumber}.${timestamp}.${role}.${hash}`
-    ).toString("base64");
+    const iat = Math.round(new Date().getTime() / 1000) - 30;
+    const exp = iat + 60 * 60 * 2;
+    const oHeader = { alg: "HS256", typ: "JWT" };
 
-    return signature;
+    const oPayload = {
+      sdkKey: API_KEY,
+      appKey: API_KEY,
+      mn: meetingNumber,
+      role: role,
+      iat: iat,
+      exp: exp,
+      tokenExp: exp
+    };
+
+    const sHeader = JSON.stringify(oHeader);
+    const sPayload = JSON.stringify(oPayload);
+    const sdkJWT = KJUR.jws.JWS.sign("HS256", sHeader, sPayload, API_SECRET);
+    return sdkJWT;
   }
 
   async getMettings(authCode) {
