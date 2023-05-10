@@ -12,7 +12,8 @@
     "@midwayjs/koa": "^3.11.5",
     "@midwayjs/web": "^3.0.0",
     "axios": "^1.4.0",
-    "egg": "^2.0.0"
+    "egg": "^2.0.0",
+    "jsrsasign": "^10.8.6"
   },
   "devDependencies": {
     "@midwayjs/cli": "^2.0.0",

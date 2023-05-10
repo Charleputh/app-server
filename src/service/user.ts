@@ -1,7 +1,6 @@
 import axios from "axios";
 import { Provide } from "@midwayjs/core";
 import { IUserOptions } from "../interface";
-import * as crypto from "crypto";
 
 const KJUR = require('jsrsasign')
 
