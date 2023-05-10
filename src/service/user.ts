@@ -8,8 +8,12 @@ const clientId = "2DITwmiQSXKbCr_hnuIYfg";
 const clientSecret = "V99WwTv7JFqfGCmPWgnyeE6qA1I690Wp";
 
 // 服务端key和密钥
-const API_KEY = "62OK_WCRQlGrIzak3Tenkw";
-const API_SECRET = "ChlCG6qq4tZHejf5jneQxVqMi4IoFWUz";
+// const API_KEY = "62OK_WCRQlGrIzak3Tenkw";
+// const API_SECRET = "ChlCG6qq4tZHejf5jneQxVqMi4IoFWUz";
+
+// meeting sdk
+const API_KEY = "WxjOvg6mSf2vjBSlZwO51Q";
+const API_SECRET = "iosM0c1Xyn4q8lk0ge24z8WR1QxRYiEk";
 
 // Zoom API的请求头，包含客户端ID和客户端密钥
 const zoomApiHeaders = {
